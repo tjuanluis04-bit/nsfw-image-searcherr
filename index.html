@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSFW Image Finder</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="https://rule34.xxx/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🔍 NSFW Image Finder</h1>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Busca tags (ej: catgirl, solo, 1girl)" autocomplete="off">
+                <button id="search-btn">Buscar</button>
+            </div>
+            <div class="filters">
+                <label><input type="checkbox" id="safe-filter" checked> Safe</label>
+                <label><input type="checkbox" id="questionable-filter"> Questionable</label>
+                <label><input type="checkbox" id="explicit-filter" checked> Explicit</label>
+                <select id="sort">
+                    <option value="score">Mejor puntuados</option>
+                    <option value="date">Más nuevos</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="results" class="grid"></div>
+        
+        <div id="loading" class="loading hidden">Cargando imágenes...</div>
+        
+        <button id="load-more" class="load-more hidden">Cargar más</button>
+    </main>
+
+    <!-- Modal para vista previa -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <img id="modal-image" alt="Preview">
+            <div class="modal-actions">
+                <button id="modal-download">Descargar</button>
+                <a id="modal-source" href="#" target="_blank">Ver en Rule34</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Powered by Rule34.xxx API • Solo para mayores de 18</p>
+        <p>Descargas múltiples disponibles</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
